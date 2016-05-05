@@ -15,6 +15,7 @@
 		AF5B6C201CDB5CC3001DE602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5B6C1E1CDB5CC3001DE602 /* LaunchScreen.storyboard */; };
 		AF5B6C2B1CDB5CC3001DE602 /* SagaanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B6C2A1CDB5CC3001DE602 /* SagaanTests.swift */; };
 		AF5B6C361CDB5CC3001DE602 /* SagaanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B6C351CDB5CC3001DE602 /* SagaanUITests.swift */; };
+		AF89E67C1CDB92A00028EB8F /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89E67B1CDB92A00028EB8F /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AF5B6C311CDB5CC3001DE602 /* SagaanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SagaanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5B6C351CDB5CC3001DE602 /* SagaanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaanUITests.swift; sourceTree = "<group>"; };
 		AF5B6C371CDB5CC3001DE602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF89E67B1CDB92A00028EB8F /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				AF5B6C1E1CDB5CC3001DE602 /* LaunchScreen.storyboard */,
 				AF5B6C211CDB5CC3001DE602 /* Info.plist */,
 				AF5B6C191CDB5CC3001DE602 /* Sagaan.xcdatamodeld */,
+				AF89E67B1CDB92A00028EB8F /* WeatherService.swift */,
 			);
 			path = Sagaan;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF89E67C1CDB92A00028EB8F /* WeatherService.swift in Sources */,
 				AF5B6C1B1CDB5CC3001DE602 /* Sagaan.xcdatamodeld in Sources */,
 				AF5B6C151CDB5CC3001DE602 /* ViewController.swift in Sources */,
 				AF5B6C131CDB5CC3001DE602 /* AppDelegate.swift in Sources */,
@@ -491,6 +495,7 @@
 				AF5B6C3C1CDB5CC3001DE602 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF5B6C3D1CDB5CC3001DE602 /* Build configuration list for PBXNativeTarget "SagaanTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				AF5B6C3F1CDB5CC3001DE602 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AF5B6C401CDB5CC3001DE602 /* Build configuration list for PBXNativeTarget "SagaanUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				AF5B6C421CDB5CC3001DE602 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
