@@ -35,9 +35,10 @@ class WeatherService {
             let temp = json["main"]["temp"].double
             let name = json["name"].string
             let weatherDescription = json["weather"][0]["description"].string
+            let icon = json["weather"][0]["icon"].string
 //            let weatherMain = json["weather"][0]["main"].string
             
-            let weather = Weather(cityName: name!, temp: temp!, description: weatherDescription!)
+            let weather = Weather(cityName: name!, temp: temp!, description: weatherDescription!, icon: icon!)
             
             if self.delegate != nil {
                 dispatch_async(dispatch_get_main_queue(), { 

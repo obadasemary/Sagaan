@@ -15,7 +15,12 @@ class ViewController: UIViewController, WeatherServiceDelegate {
 
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var weatherCondition: UIImageView!
+    @IBOutlet weak var cityButton: UIButton!
+    @IBOutlet weak var minTemp: UILabel!
+    @IBOutlet weak var maxTemp: UILabel!
+    @IBOutlet weak var clouds: UILabel!
+    @IBOutlet weak var percipitation: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +42,6 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         let ok = UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction) in
             
             let textField = alert.textFields?[0]
-            self.cityLabel.text = textField?.text!
             let cityName = textField?.text
             self.weatherService.getWeather(cityName!)
         }
@@ -55,9 +59,10 @@ class ViewController: UIViewController, WeatherServiceDelegate {
 
     func setWeather(weather: Weather) {
         
-        cityLabel.text = weather.cityName
-        tempLabel.text = "\(weather.temp)"
+        tempLabel.text = "\(weather.tempC)°"
+        weatherCondition.image = UIImage(named: weather.icon)
         descriptionLabel.text = weather.description
+        cityButton.setTitle(weather.cityName, forState: .Normal)
     }
    
 }
