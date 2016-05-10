@@ -15,7 +15,9 @@
 		AF5B6C201CDB5CC3001DE602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF5B6C1E1CDB5CC3001DE602 /* LaunchScreen.storyboard */; };
 		AF5B6C2B1CDB5CC3001DE602 /* SagaanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B6C2A1CDB5CC3001DE602 /* SagaanTests.swift */; };
 		AF5B6C361CDB5CC3001DE602 /* SagaanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B6C351CDB5CC3001DE602 /* SagaanUITests.swift */; };
+		AF8746AF1CDF7F130065CABF /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8746AE1CDF7F130065CABF /* Weather.swift */; };
 		AF89E67C1CDB92A00028EB8F /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89E67B1CDB92A00028EB8F /* WeatherService.swift */; };
+		E9FED463132096D176BC3C75 /* Pods_Sagaan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CAA891EE7A9FFEE76F71E2 /* Pods_Sagaan.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70606F1DC8E24B78E8EE9AAF /* Pods-Sagaan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sagaan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sagaan/Pods-Sagaan.debug.xcconfig"; sourceTree = "<group>"; };
 		AF5B6C0F1CDB5CC3001DE602 /* Sagaan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sagaan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5B6C121CDB5CC3001DE602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF5B6C141CDB5CC3001DE602 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +53,10 @@
 		AF5B6C311CDB5CC3001DE602 /* SagaanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SagaanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5B6C351CDB5CC3001DE602 /* SagaanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagaanUITests.swift; sourceTree = "<group>"; };
 		AF5B6C371CDB5CC3001DE602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF8746AE1CDF7F130065CABF /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		AF89E67B1CDB92A00028EB8F /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		C3CAA891EE7A9FFEE76F71E2 /* Pods_Sagaan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sagaan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB06F8C6B8AF0683BCB24405 /* Pods-Sagaan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sagaan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sagaan/Pods-Sagaan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9FED463132096D176BC3C75 /* Pods_Sagaan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A148C5F72F4E56C11E881521 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70606F1DC8E24B78E8EE9AAF /* Pods-Sagaan.debug.xcconfig */,
+				EB06F8C6B8AF0683BCB24405 /* Pods-Sagaan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AF5B6C061CDB5CC3001DE602 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +101,8 @@
 				AF5B6C291CDB5CC3001DE602 /* SagaanTests */,
 				AF5B6C341CDB5CC3001DE602 /* SagaanUITests */,
 				AF5B6C101CDB5CC3001DE602 /* Products */,
+				A148C5F72F4E56C11E881521 /* Pods */,
+				D06A537B40E3F373B1E8377A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +127,7 @@
 				AF5B6C211CDB5CC3001DE602 /* Info.plist */,
 				AF5B6C191CDB5CC3001DE602 /* Sagaan.xcdatamodeld */,
 				AF89E67B1CDB92A00028EB8F /* WeatherService.swift */,
+				AF8746AE1CDF7F130065CABF /* Weather.swift */,
 			);
 			path = Sagaan;
 			sourceTree = "<group>";
@@ -131,6 +150,14 @@
 			path = SagaanUITests;
 			sourceTree = "<group>";
 		};
+		D06A537B40E3F373B1E8377A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3CAA891EE7A9FFEE76F71E2 /* Pods_Sagaan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF5B6C3A1CDB5CC3001DE602 /* Build configuration list for PBXNativeTarget "Sagaan" */;
 			buildPhases = (
+				21E47E97A81837426A23709C /* 📦 Check Pods Manifest.lock */,
 				AF5B6C0B1CDB5CC3001DE602 /* Sources */,
 				AF5B6C0C1CDB5CC3001DE602 /* Frameworks */,
 				AF5B6C0D1CDB5CC3001DE602 /* Resources */,
+				6683E88C5FE175FA924B9227 /* 📦 Embed Pods Frameworks */,
+				BF0E0F3F415FBDEF07CEC9BC /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,6 +290,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21E47E97A81837426A23709C /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6683E88C5FE175FA924B9227 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sagaan/Pods-Sagaan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF0E0F3F415FBDEF07CEC9BC /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sagaan/Pods-Sagaan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AF5B6C0B1CDB5CC3001DE602 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -269,6 +347,7 @@
 				AF5B6C1B1CDB5CC3001DE602 /* Sagaan.xcdatamodeld in Sources */,
 				AF5B6C151CDB5CC3001DE602 /* ViewController.swift in Sources */,
 				AF5B6C131CDB5CC3001DE602 /* AppDelegate.swift in Sources */,
+				AF8746AF1CDF7F130065CABF /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +489,7 @@
 		};
 		AF5B6C3B1CDB5CC3001DE602 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70606F1DC8E24B78E8EE9AAF /* Pods-Sagaan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sagaan/Info.plist;
@@ -421,6 +501,7 @@
 		};
 		AF5B6C3C1CDB5CC3001DE602 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB06F8C6B8AF0683BCB24405 /* Pods-Sagaan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sagaan/Info.plist;

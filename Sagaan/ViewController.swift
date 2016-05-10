@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController, WeatherServiceDelegate {
     
@@ -52,8 +53,12 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         presentViewController(alert, animated: true, completion: nil)
     }
 
-    func setWeather() {
-        print("*** View Controller Set Weather")
+    func setWeather(weather: Weather) {
+        
+        cityLabel.text = weather.cityName
+        tempLabel.text = "\(weather.temp)"
+        descriptionLabel.text = weather.description
     }
+   
 }
 
