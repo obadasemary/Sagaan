@@ -57,12 +57,26 @@ class ViewController: UIViewController, WeatherServiceDelegate {
         presentViewController(alert, animated: true, completion: nil)
     }
 
+    // MARK: - Weather Service Delegate Methods
+    
     func setWeather(weather: Weather) {
         
-        tempLabel.text = "\(weather.tempC)°"
+        tempLabel.text = "\(weather.tempC) °"
         weatherCondition.image = UIImage(named: weather.icon)
         descriptionLabel.text = weather.description
         cityButton.setTitle(weather.cityName, forState: .Normal)
+        clouds.text = "Clouds \(weather.clouds) %"
+        minTemp.text = "\(weather.tempMinC) °"
+        maxTemp.text = "\(weather.tempMaxC) °"
+    }
+    
+    func weatherErrorWithMessage(message: String) {
+        
+        print("Weather Error Message: \(message)")
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+        alert.addAction(cancel)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
    
 }

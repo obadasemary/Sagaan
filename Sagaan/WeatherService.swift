@@ -12,6 +12,7 @@ import SwiftyJSON
 protocol WeatherServiceDelegate {
     
     func setWeather(weather: Weather)
+    func weatherErrorWithMessage(message: String)
 }
 
 class WeatherService {
@@ -22,13 +23,48 @@ class WeatherService {
     func getWeather(city: String) {
 
         let cityEscaped = city.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
+        let appID = "56abb5d245399108961d3b2422a0f9da"
         
-        let path = "http://api.openweathermap.org/data/2.5/weather?q=\(cityEscaped!)&appid=56abb5d245399108961d3b2422a0f9da"
+        let path = "http://api.openweathermap.org/data/2.5/weather?q=\(cityEscaped!)&appid=\(appID)"
         let url = NSURL(string: path)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithURL(url!) { (data, response, error) in
             
+            guard (error == nil) else {
+                print(error?.description)
+                return
+            }
+            
+            if let httpResponse = response as? NSHTTPURLResponse {
+                print(httpResponse.statusCode)
+            }
+            
             let json = JSON(data: data!)
+            print(json)
+            
+            var status = 0
+            
+            if let cod = json["cod"].int {
+                status = cod
+            } else if let cod = json["cod"].string {
+                status = Int(cod)!
+            }
+            
+            print("Weather Status code: \(status)")
+            
+            if status == 200 {
+                _ = json["coord"]["lon"].double
+                _ = json["coord"]["lat"].double
+                let temp = json["main"]["temp"].double
+                let name = json["name"].string
+                let weatherDescription = json["weather"][0]["description"].string
+                let icon = json["weather"][0]["icon"].string
+                //            let weatherMain = json["weather"][0]["main"].string
+                let clouds = json["clouds"]["all"].double
+                let tempMin = json["main"]["temp_min"].double
+                let tempMax = json["main"]["temp_max"].double
+            }
+            
             
 //            let lon = json["coord"]["lon"].double
 //            let lat = json["coord"]["lat"].double
@@ -37,8 +73,11 @@ class WeatherService {
             let weatherDescription = json["weather"][0]["description"].string
             let icon = json["weather"][0]["icon"].string
 //            let weatherMain = json["weather"][0]["main"].string
+            let clouds = json["clouds"]["all"].double
+            let tempMin = json["main"]["temp_min"].double
+            let tempMax = json["main"]["temp_max"].double
             
-            let weather = Weather(cityName: name!, temp: temp!, description: weatherDescription!, icon: icon!)
+            let weather = Weather(cityName: name!, temp: temp!, description: weatherDescription!, icon: icon!,clouds: clouds!, tempMin: tempMin!, tempMax: tempMax!)
             
             if self.delegate != nil {
                 dispatch_async(dispatch_get_main_queue(), { 

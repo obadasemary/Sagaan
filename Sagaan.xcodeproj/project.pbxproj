@@ -121,13 +121,13 @@
 			children = (
 				AF5B6C121CDB5CC3001DE602 /* AppDelegate.swift */,
 				AF5B6C141CDB5CC3001DE602 /* ViewController.swift */,
+				AF89E67B1CDB92A00028EB8F /* WeatherService.swift */,
+				AF8746AE1CDF7F130065CABF /* Weather.swift */,
 				AF5B6C161CDB5CC3001DE602 /* Main.storyboard */,
 				AF5B6C1C1CDB5CC3001DE602 /* Assets.xcassets */,
 				AF5B6C1E1CDB5CC3001DE602 /* LaunchScreen.storyboard */,
 				AF5B6C211CDB5CC3001DE602 /* Info.plist */,
 				AF5B6C191CDB5CC3001DE602 /* Sagaan.xcdatamodeld */,
-				AF89E67B1CDB92A00028EB8F /* WeatherService.swift */,
-				AF8746AE1CDF7F130065CABF /* Weather.swift */,
 			);
 			path = Sagaan;
 			sourceTree = "<group>";

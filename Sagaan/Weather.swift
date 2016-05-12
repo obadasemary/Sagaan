@@ -14,6 +14,11 @@ struct Weather {
     let temp: Double
     let description: String
     let icon: String
+    let clouds: Double
+    let tempMin: Double
+    let tempMax: Double
+    
+    
     
     var tempC: Double {
         get {
@@ -21,12 +26,33 @@ struct Weather {
         }
     }
     
-    init(cityName: String, temp: Double, description: String, icon: String) {
+    var tempMinC: Double {
+        get {
+            return tempMin - 273.15
+        }
+    }
+    
+    var tempMaxC: Double {
+        get {
+            return tempMax - 273.15
+        }
+    }
+    
+    init(cityName: String,
+         temp: Double,
+         description: String,
+         icon: String,
+         clouds: Double,
+         tempMin: Double,
+         tempMax: Double) {
         
         self.cityName = cityName
         self.temp = temp
         self.description = description
         self.icon = icon
+        self.clouds = clouds
+        self.tempMin = tempMin
+        self.tempMax = tempMax
     }
     
 }
