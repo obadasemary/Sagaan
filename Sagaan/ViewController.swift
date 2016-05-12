@@ -61,13 +61,27 @@ class ViewController: UIViewController, WeatherServiceDelegate {
     
     func setWeather(weather: Weather) {
         
-        tempLabel.text = "\(weather.tempC) °"
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .DecimalStyle
+        formatter.maximumFractionDigits = 1
+        formatter.minimumFractionDigits = 1
+        
+        let C = formatter.stringFromNumber(weather.tempC)!
+        tempLabel.text = "\(C) °"
+        
         weatherCondition.image = UIImage(named: weather.icon)
         descriptionLabel.text = weather.description
         cityButton.setTitle(weather.cityName, forState: .Normal)
         clouds.text = "Clouds \(weather.clouds) %"
-        minTemp.text = "\(weather.tempMinC) °"
-        maxTemp.text = "\(weather.tempMaxC) °"
+        
+        let min = formatter.stringFromNumber(weather.tempMinC)!
+        minTemp.text = "Min Temp \(min) °"
+        
+        let max = formatter.stringFromNumber(weather.tempMaxC)!
+        maxTemp.text = "Max Temp \(max) °"
+        
+        
+        percipitation.text = "\(weather.pressure) % Pressure"
     }
     
     func weatherErrorWithMessage(message: String) {

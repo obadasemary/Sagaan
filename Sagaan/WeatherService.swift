@@ -56,34 +56,40 @@ class WeatherService {
                 _ = json["coord"]["lon"].double
                 _ = json["coord"]["lat"].double
                 let temp = json["main"]["temp"].double
+                let tempMin = json["main"]["temp_min"].double
+                let tempMax = json["main"]["temp_max"].double
+                let humidity = json["main"]["humidity"].double
+                let pressure = json["main"]["pressure"].double
                 let name = json["name"].string
                 let weatherDescription = json["weather"][0]["description"].string
                 let icon = json["weather"][0]["icon"].string
-                //            let weatherMain = json["weather"][0]["main"].string
                 let clouds = json["clouds"]["all"].double
-                let tempMin = json["main"]["temp_min"].double
-                let tempMax = json["main"]["temp_max"].double
-            }
-            
-            
-//            let lon = json["coord"]["lon"].double
-//            let lat = json["coord"]["lat"].double
-            let temp = json["main"]["temp"].double
-            let name = json["name"].string
-            let weatherDescription = json["weather"][0]["description"].string
-            let icon = json["weather"][0]["icon"].string
-//            let weatherMain = json["weather"][0]["main"].string
-            let clouds = json["clouds"]["all"].double
-            let tempMin = json["main"]["temp_min"].double
-            let tempMax = json["main"]["temp_max"].double
-            
-            let weather = Weather(cityName: name!, temp: temp!, description: weatherDescription!, icon: icon!,clouds: clouds!, tempMin: tempMin!, tempMax: tempMax!)
-            
-            if self.delegate != nil {
-                dispatch_async(dispatch_get_main_queue(), { 
+                _ = json["weather"][0]["main"].string
                 
-                    self.delegate?.setWeather(weather)
-                })
+                let weather = Weather(cityName: name!, temp: temp!, description: weatherDescription!, icon: icon!,clouds: clouds!, tempMin: tempMin!, tempMax: tempMax!, humidity: humidity!, pressure: pressure!)
+                
+                if self.delegate != nil {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        
+                        self.delegate?.setWeather(weather)
+                    })
+                }
+                
+            } else if status == 404 {
+                
+                if self.delegate != nil {
+                    dispatch_async(dispatch_get_main_queue(), { 
+                        self.delegate?.weatherErrorWithMessage("City Not Found")
+                    })
+                }
+                
+            } else {
+                
+                if self.delegate != nil {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.delegate?.weatherErrorWithMessage("Something is wrong")
+                    })
+                }
             }
         }
         
